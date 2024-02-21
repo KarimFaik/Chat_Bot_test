@@ -4,6 +4,8 @@ main.py = main file and file that u need to run
 
 u need to download (dotenv, python-telegram-bot) libraries
 
+python-telegram-bot==13.13
+
 !!!dont download telegram library it will conflict with python-telegram-bot
 
 setting.py = tokens and chat id
