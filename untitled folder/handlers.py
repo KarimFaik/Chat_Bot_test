@@ -1,7 +1,7 @@
 import os
 
 from telegram import Update
-from telegram.ext import CommandHandler, MessageHandler, filters, CallbackContext
+from telegram.ext import CommandHandler, MessageHandler, Filters, CallbackContext
 
 from settings import WELCOME_MESSAGE, TELEGRAM_SUPPORT_CHAT_ID, REPLY_TO_THIS_MESSAGE, WRONG_REPLY
 
@@ -56,6 +56,6 @@ def forward_to_user(update, context):
 
 def setup_dispatcher(dp):
     dp.add_handler(CommandHandler('start', start))
-    dp.add_handler(MessageHandler(filters.chat_type.private, forward_to_chat))
-    dp.add_handler(MessageHandler(filters.chat(TELEGRAM_SUPPORT_CHAT_ID) & Filters.reply, forward_to_user))
+    dp.add_handler(MessageHandler(Filters.chat_type.private, forward_to_chat))
+    dp.add_handler(MessageHandler(Filters.chat(TELEGRAM_SUPPORT_CHAT_ID) & Filters.reply, forward_to_user))
     return dp
