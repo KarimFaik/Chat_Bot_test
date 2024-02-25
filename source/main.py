@@ -5,7 +5,7 @@ from answs import accresp
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logging.getLogger('httpx').setLevel(logging.WARNING)
-TOKEN = "XXX"
+TOKEN = "5495273860:AAFLZNnqgygWJCLrI-_b9G7-ETmJsvBw_Fw"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text="I'm a Rudn bot, what i can help you with ?")
