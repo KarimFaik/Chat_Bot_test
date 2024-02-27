@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 def accresp(maintext):
 
     answerid = -1
-    with open('data.xml', 'r', encoding='utf-8') as file:
+    with open('answer_data.xml', 'r', encoding='utf-8') as file:
         data = file.read()
 
     root = ET.fromstring(data)
