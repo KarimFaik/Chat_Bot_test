@@ -12,7 +12,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text="Приветствую вас, я чат-бот библиотеки РУДН, чтобы узнать о всех доступных командах впишите /help .")
 
 async def help(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await context.bot.send_message(chat_id=update.effective_chat.id, text=f"В данной версии бота доступны следующие команды:\n/help - справка о командах\n/question - задать вопрос\n/feedback - оставить свои мнения и предложения по улучшению бота")
+    await context.bot.send_message(chat_id=update.effective_chat.id, text=f"В данной версии бота доступны следующие команды:\n/help - справка о командах\n/q - задать вопрос\n/feedback - оставить свои мнения и предложения по улучшению бота")
 
 #async def answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
 #    answer = accresp(update.message.text)
@@ -34,7 +34,7 @@ if __name__ == '__main__':
     application = ApplicationBuilder().token(TOKEN).build()
 
     start_handler = CommandHandler('start', start)
-    question_handler = CommandHandler('question', question)
+    question_handler = CommandHandler('q', question)
     #answer_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), answer)
     feedback_handler = CommandHandler('feedback', feedback)
     help_handler = CommandHandler('help', help)
