@@ -8,8 +8,14 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logging.getLogger('httpx').setLevel(logging.WARNING)
 TOKEN = "5495273860:AAFLZNnqgygWJCLrI-_b9G7-ETmJsvBw_Fw"
 
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await context.bot.send_message(chat_id=update.effective_chat.id, text="Приветствую вас, я чат-бот библиотеки РУДН, чтобы узнать о всех доступных командах впишите /help .")
+    # chat_id = update.message.chat_id
+    first_name = update.message.chat.first_name
+    # last_name = update.message.chat.last_name
+    # username = update.message.chat.username
+    await context.bot.send_message(chat_id=update.effective_chat.id, text= f"Привет, {first_name}! Я чат-бот Научной библиотеки РУДН. Чем могу быть полезен? /help .")
+
 
 async def help(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text=f"В данной версии бота доступны следующие команды:\n/help - справка о командах\n/q - задать вопрос\n/feedback - оставить свои мнения и предложения по улучшению бота")
@@ -43,4 +49,5 @@ if __name__ == '__main__':
     application.add_handler(question_handler)
     application.add_handler(feedback_handler)
     application.add_handler(help_handler)
+
     application.run_polling()
