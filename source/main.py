@@ -88,7 +88,12 @@ if __name__ == '__main__':
                 CallbackQueryHandler(a15, pattern="^" + str(A15) + "$"),
                 CallbackQueryHandler(a16, pattern="^" + str(A16) + "$"),
                 CallbackQueryHandler(a17, pattern="^" + str(A17) + "$"),
-                CallbackQueryHandler(a18, pattern="^" + str(A18) + "$")
+                CallbackQueryHandler(a18, pattern="^" + str(A18) + "$"),
+                CallbackQueryHandler(new_1, pattern="^" + str(NEW_1) + "$"),
+                CallbackQueryHandler(new_2, pattern="^" + str(NEW_2) + "$"),
+                CallbackQueryHandler(new_3, pattern="^" + str(NEW_3) + "$"),
+                CallbackQueryHandler(new, pattern="^" + str(NEW) + "$"),
+                CallbackQueryHandler(oper, pattern="^" + str(OPER) + "$")
                 
             ],
             # END_ROUTES: [
