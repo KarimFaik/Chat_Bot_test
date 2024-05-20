@@ -16,7 +16,7 @@ from mproc import *
 
 logger = logging.getLogger(__name__)
 START_ROUTES, END_ROUTES = range(2)
-ONE, TWO, THREE, FOUR, FIVE, MAIN_MENU, MENU, INFO, A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11,A12,A13,A14,A15,A16,A17,A18 = range(26)
+ONE, TWO, THREE, FOUR, FIVE, MAIN_MENU, MENU, INFO, A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11,A12,A13,A14,A15,A16,A17,A18,NEW,NEW_1,NEW_2,NEW_3,OPER = range(31)
 
 
 async def main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
@@ -24,7 +24,7 @@ async def main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     keyboard = [
         [
             InlineKeyboardButton("Вопросы", callback_data=str(MENU)),
-            InlineKeyboardButton("Прочее", callback_data=str(INFO)),
+            InlineKeyboardButton("Переход на оператора", callback_data=str(OPER)),
         ]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
@@ -51,6 +51,12 @@ async def menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         text="Выберите категорию вопроса:", reply_markup=reply_markup
     )
     return START_ROUTES
+
+
+def oper(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    answer = ('Оператор: @l3xs1s')
+    return query.edit_message_text(text=answer)
 
 
 async def one(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
@@ -88,8 +94,10 @@ async def two(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
             [InlineKeyboardButton("как работает библиотека", callback_data=str(A10)),#10
         ],
         [
-            InlineKeyboardButton("библеотеке главного корпуса", callback_data=str(A12)),],#12
+            InlineKeyboardButton("библеотека главного корпуса", callback_data=str(A12)),],#12
             [InlineKeyboardButton("что такое унибц", callback_data=str(A8)),#8
+        ],
+            [InlineKeyboardButton("режим работы библиотеки", callback_data=str(NEW)),#new
         ],
         [
             InlineKeyboardButton("Back", callback_data=str(MENU))
@@ -161,16 +169,61 @@ async def five(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     )
     return START_ROUTES
 
-
+async def new(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    query = update.callback_query
+    await query.answer()
+    keyboard = [
+        [
+            InlineKeyboardButton("Библиотека в главном корпусе ул. Миклухо-Маклая, 6", callback_data=str(NEW_1)),],#new_1
+            [InlineKeyboardButton(f"Библиотека инженерной академии и факультета\n"
+                                  f"физико-математических и естественных наук ул. Орджоникидзе, 3\n", callback_data=str(NEW_2)),#new_2
+        ],
+        [
+            InlineKeyboardButton("Библиотека института русского языка, ул. Миклухо-Маклая, 10 к.2", callback_data=str(NEW_3)),],#new_3
+            [InlineKeyboardButton("Back", callback_data=str(two))
+        ]
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text="Выберете вашу библеатеку:", reply_markup=reply_markup
+    )
+    return START_ROUTES
 
 def info(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = (f'В данной версии бота доступны следующие команды:\n'
               f'/help - справка о командах\n'
               f'/q - задать вопрос\n/feedback - оставить свои мнения и предложения по улучшению бота\n'
-              f'/menu - менюшка')
+              f'/menu - менюшка\n'
+              f' @l3xs1s ')
     return query.edit_message_text(text=answer)
-   
+
+
+
+
+def new_1(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    answer = (f"Библиотека в главном корпусе ул. Миклухо-Маклая, 6: \n"
+                        f'пн-чт – 11.00-17.45\n'
+                        f'пт - 11.00-16.45\n'
+                        f'сб - 13.00-16.45\n')
+    return query.edit_message_text(text=answer)
+
+def new_2(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    answer = (f"Библиотека инженерной академии и факультета \n"
+                        "физико-математических и естественных наук ул. Орджоникидзе, 3: \n"
+                        f'пн-чт – 11.00-17.45\n'
+                        f'пт - 11.00-16.45\n')
+    return query.edit_message_text(text=answer)
+
+def new_3(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    answer = (f"Библиотека института русского языка, ул. Миклухо-Маклая, 10 к.2: \n"
+                        f'пн–пт 12.30 – 17.30')
+    return query.edit_message_text(text=answer)
+
+
 
 def a1(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -186,7 +239,7 @@ def a2(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 def a3(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    answer = accresp('сдать книгу')
+    answer = accresp('куда сдавать учебник')
     return query.edit_message_text(text=answer)
 
 
