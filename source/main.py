@@ -20,13 +20,13 @@ corrector.LoadLangModel('ru_small.bin')
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logging.getLogger('httpx').setLevel(logging.WARNING)
 TOKEN = "7046074939:AAHcleHzkFM8qDeBJi8dDIT0r2qVLumbiw4"
-
+# TOKEN = "6653576011:AAGah5wzOymqQKylQ1yKo4Edbgufmn3tEk4" ~karim
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # chat_id = update.message.chat_id
     first_name = update.message.chat.first_name
     # last_name = update.message.chat.last_name
     # username = update.message.chat.username
-    await context.bot.send_message(chat_id=update.effective_chat.id, text= f"Привет, {first_name}! Я чат-бот Научной библиотеки РУДН. Чем могу быть полезен? /help .")
+    await context.bot.send_message(chat_id=update.effective_chat.id, text= f"Привет, {first_name}! Я чат-бот Научной библиотеки РУДН. Чем могу быть полезен? /menu .")
 
 
 async def help(update: Update, context: ContextTypes.DEFAULT_TYPE):

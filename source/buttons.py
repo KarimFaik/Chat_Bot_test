@@ -201,134 +201,308 @@ def info(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 
-def new_1(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def new_1(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = (f"Библиотека в главном корпусе ул. Миклухо-Маклая, 6: \n"
                         f'пн-чт – 11.00-17.45\n'
                         f'пт - 11.00-16.45\n'
                         f'сб - 13.00-16.45\n')
-    return query.edit_message_text(text=answer)
+    keyboard = [
 
-def new_2(update: Update, context: ContextTypes.DEFAULT_TYPE):
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
+
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
+
+async def new_2(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = (f"Библиотека инженерной академии и факультета \n"
                         "физико-математических и естественных наук ул. Орджоникидзе, 3: \n"
                         f'пн-чт – 11.00-17.45\n'
                         f'пт - 11.00-16.45\n')
-    return query.edit_message_text(text=answer)
+    keyboard = [
 
-def new_3(update: Update, context: ContextTypes.DEFAULT_TYPE):
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
+
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
+
+async def new_3(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = (f"Библиотека института русского языка, ул. Миклухо-Маклая, 10 к.2: \n"
                         f'пн–пт 12.30 – 17.30')
-    return query.edit_message_text(text=answer)
+    keyboard = [
+
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
+
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
 
 
 
-def a1(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def a1(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = accresp('вход в эбс')
-    return query.edit_message_text(text=answer)
+    keyboard = [
+
+            InlineKeyboardButton("menu", callback_data=str(MENU)), ],#menu
+
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
 
 
-def a2(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def a2(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = accresp('удоступ в базы')
-    return query.edit_message_text(text=answer)
+    keyboard = [
+
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
+
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
 
 
-def a3(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def a3(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = accresp('куда сдавать учебник')
-    return query.edit_message_text(text=answer)
+    keyboard = [
+
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
+
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
 
 
-def a4(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def a4(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = accresp('какие книги вернуть')
-    return query.edit_message_text(text=answer)
+    keyboard = [
 
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
 
-def a5(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
+
+async def a5(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = accresp('подписать обходной лист')
-    return query.edit_message_text(text=answer)
+    keyboard = [
 
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
 
-def a6(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    answer = accresp('потерял книгу')
-    return query.edit_message_text(text=answer)
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
 
-
-def a7(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    answer = accresp('продлить книгу')
-    return query.edit_message_text(text=answer)
-
-
-def a8(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def a8(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = accresp('что такое унибц')
-    return query.edit_message_text(text=answer)
+    keyboard = [
 
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
 
-def a9(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
+
+async def a6(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    answer = accresp('потерял книгу')
+    keyboard = [
+
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
+
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
+
+async def a7(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    answer = accresp('продлить книгу')
+    keyboard = [
+
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
+
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
+
+async def a9(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = accresp('когда работает библиотека')
-    return query.edit_message_text(text=answer)
+    keyboard = [
 
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
 
-def a10(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
+
+async def a10(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = accresp('записаться в унибц')
-    return query.edit_message_text(text=answer)
+    keyboard = [
 
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
 
-def a11(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
+
+async def a11(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = accresp('сдать диссертацию')
-    return query.edit_message_text(text=answer)
+    keyboard = [
 
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
 
-def a12(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
+
+async def a12(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = accresp('можно взять в библеотеке главного корпуса')
-    return query.edit_message_text(text=answer)
+    keyboard = [
 
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
 
-def a13(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
+
+async def a13(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = accresp('удаленный доступ к')
-    return query.edit_message_text(text=answer)
+    keyboard = [
 
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
 
-def a14(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
+
+async def a14(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = accresp('что такое эбс')
-    return query.edit_message_text(text=answer)
+    keyboard = [
 
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
 
-def a15(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
+
+async def a15(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = accresp('электронную версию')
-    return query.edit_message_text(text=answer)
+    keyboard = [
 
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
 
-def a16(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
+
+async def a16(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = accresp('не успел сдать книгу')
-    return query.edit_message_text(text=answer)
+    keyboard = [
 
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
 
-def a17(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
+
+async def a17(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = accresp('место для мусульман')
-    return query.edit_message_text(text=answer)
+    keyboard = [
 
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
 
-def a18(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
+
+async def a18(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     answer = accresp('зарегистрироваться в туис')
-    return query.edit_message_text(text=answer)
+    keyboard = [
 
+        InlineKeyboardButton("menu", callback_data=str(MENU)), ],  # menu
+
+    # return query.edit_message_text(text=answer)
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await query.edit_message_text(
+        text=answer, reply_markup=reply_markup
+    )
+    return START_ROUTES
