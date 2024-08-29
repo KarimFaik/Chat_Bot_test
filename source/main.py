@@ -6,7 +6,7 @@ from mproc import *
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logging.getLogger('httpx').setLevel(logging.WARNING)
-TOKEN = "5495273860:AAFLZNnqgygWJCLrI-_b9G7-ETmJsvBw_Fw"
+TOKEN = "*****"
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
