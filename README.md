@@ -1,22 +1,3 @@
-# Chat_Bot_test
-
-main.py = main file and file that u need to run
-
-u need to download (dotenv, python-telegram-bot) libraries
-
-python-telegram-bot==13.13
-
-!!!dont download telegram library it will conflict with python-telegram-bot
-
-setting.py = tokens and chat id
-
-handlers.py == all function for bot to perform
-
-all code is fairly commented
-
-
-!!!dont push  without consultation
-!!!dont forget to commit locally
-
-# !!!ERRORS(not solved)
-TypeError: Updater.__init__() missing 1 required positional argument: 'update_queue'
+Программное обеспечение для системы автоматических ответов вопросы пользователей УНИБЦ (НБ)
+Цель проекта	Внедрение в работу УНИБЦ (НБ) системы автоматического консультирования пользователей
+Индивидуальный сервис с ответами на вопросы пользователей, поддержка текстовых и голосовых ответов, перевод на консультанта
